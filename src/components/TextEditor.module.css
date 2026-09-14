@@ -1,0 +1,97 @@
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+body.dark-mode .label {
+  color: var(--text-dark);
+}
+
+.textarea {
+  width: 100%;
+  min-height: 250px;
+  padding: 1rem;
+  border: 2px solid var(--border-light);
+  border-radius: 0.75rem;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 1rem;
+  line-height: 1.6;
+  resize: vertical;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.dark-mode .textarea {
+  background-color: var(--bg-dark-secondary);
+  color: var(--text-dark);
+  border-color: var(--border-dark);
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--bg-light-secondary);
+}
+
+body.dark-mode .textarea:disabled {
+  background-color: var(--bg-dark);
+}
+
+.textarea.limitReached {
+  border-color: var(--error-color);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-light-secondary);
+  transition: color 0.2s ease;
+}
+
+body.dark-mode .counter {
+  color: var(--text-dark-secondary);
+}
+
+.counter.warning {
+  color: var(--warning-color);
+  font-weight: 600;
+}
+
+.counter.error {
+  color: var(--error-color);
+  font-weight: 600;
+}
+
+.remaining {
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .textarea {
+    min-height: 200px;
+    font-size: 16px;
+  }
+}
